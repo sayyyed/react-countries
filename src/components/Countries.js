@@ -14,30 +14,28 @@ export const Countries = (props) => {
     const [countriesList, setCountriesList] = useState([])
     const [isLoading, setLoading] = useState(false)
 
-    async function fetchData() {
+    async function fetchData(req) {
         setLoading(true);
-        const response = await fetch(url);
+        const response = await fetch(req);
         const data = await response.json();
         setLoading(false);
 
-        if(data.status !==  404)
-            setCountriesList(data);
+        if(data.message && data.message.includes('Not Found'))
+            setCountriesList([]);
         else
-            setCountriesList([])
+            setCountriesList(data)
     }
 
-    useEffect(() => {
-        
-        fetchData();
-        
+    useEffect(() => {      
+        fetchData(url);
     }, [url]);
 
   return (
     <>
         <LoadingSpinner isVisible={isLoading}/>
-
+        <h2 className="notfound" style={{display: countriesList.length === 0 ? 'block': 'none'}}>No Data</h2>
         <div className='countries'>
-            {countriesList.length !== 0 && countriesList.map(c => 
+            {countriesList && countriesList.length !== 0 && countriesList.map(c => 
                 {
                     return <Country key={c.name.common} country={c} />;
                 })

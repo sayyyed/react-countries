@@ -4,18 +4,24 @@
     box-sizing: border-box;
 }
 
-.spinner{
-    position: absolute;
-    top: 50%;
-    right: 50%;
+.header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    background-color: lightgray;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    color: brown;
+    margin-left: 10px;
 }
 
 .search{
-    position: fixed;
-  top: 0;
-  width: 100%;
-    text-align: center;
-    background-color: lightgray;
+    width: 100%;
 }
 
 .search-input{
@@ -27,19 +33,22 @@
     border-radius: 10px;
     font-size: 20px;
 }
-
+.search-input:focus{
+    outline-color: blue;
+}
 .search-btn{
     width: 100px;
     height: 30px;
     border: 1px solid gray;
     color: white;
-    background-color: black;
+    background-color: blue;
     border-radius: 10px;
     font-weight: bold;
+    font-size: 18px;
     cursor: pointer;
 }
 .search-btn:hover{
-    background-color: gray;
+    background-color: lightblue;
 }
 .countries{
     margin: 10px;
@@ -89,4 +98,10 @@
     background-color: wheat;
     padding: 4px;
     border-radius: 5px;
+}
+
+.notfound{
+    position: absolute;
+    top: 50%;
+    right: 50%;
 }

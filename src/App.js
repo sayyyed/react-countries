@@ -12,9 +12,12 @@ function App() {
 
   return (
     <div className="App">
-      <div className='search'>
-        <input type="text" ref={inputElement} onKeyPress={e => e.key === 'Enter' || e.key === 'Return' ? handleSearch() : null} className='search-input'/>
-        <button onClick={handleSearch} className='search-btn'>Search</button>
+      <div className='header'>
+        <h3 className='logo'>Countries</h3>
+        <div className='search'>
+          <input type="text" ref={inputElement} onKeyPress={e => e.key === 'Enter' || e.key === 'Return' ? handleSearch() : null} className='search-input'/>
+          <button onClick={handleSearch} className='search-btn'>Search</button>
+        </div>
       </div>
       <Countries search={searchText}/>
     </div>

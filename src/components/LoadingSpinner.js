@@ -1,6 +1,7 @@
 import React from 'react'
 import './LoadingSpinner.css'
 
+//https://tobiasahlin.com/spinkit/
 export const LoadingSpinner = ({isVisible}) => {
   return (
     <>
