@@ -1,38 +1,92 @@
-.App {
-  text-align: center;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.spinner{
+    position: absolute;
+    top: 50%;
+    right: 50%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.search{
+    position: fixed;
+  top: 0;
+  width: 100%;
+    text-align: center;
+    background-color: lightgray;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.search-input{
+    margin: 10px;
+    width: 30%;
+    height: 30px;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-size: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.search-btn{
+    width: 100px;
+    height: 30px;
+    border: 1px solid gray;
+    color: white;
+    background-color: black;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.search-btn:hover{
+    background-color: gray;
+}
+.countries{
+    margin: 10px;
+    margin-top: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow:  wrap;
+    gap: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.country{
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 1px 1px 5px gray;
+    width: 400px;
+    height: 400px;
+    min-width: 400px;
+    min-height: 400px;
+}
+
+.country:hover{
+    background-color: rgb(247, 247, 247);
+}
+
+.field{
+    margin-top: 5px;
+    display: flex;
+    gap: 5px;
+}
+
+.label{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.field-data{
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.flag{
+    width: 80%;
+    margin: auto;
+    margin-top: 10px;
+    background-color: wheat;
+    padding: 4px;
+    border-radius: 5px;
 }

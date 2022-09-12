@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import './app.css'
+import { Countries } from "./components/Countries";
+import {useState, useRef } from 'react'
 
 function App() {
+  const inputElement = useRef();
+  const [searchText, setSearchText] = useState("");
+  
+  const handleSearch = () => {
+    setSearchText(inputElement.current.value)
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='search'>
+        <input type="text" ref={inputElement} onKeyPress={e => e.key === 'Enter' || e.key === 'Return' ? handleSearch() : null} className='search-input'/>
+        <button onClick={handleSearch} className='search-btn'>Search</button>
+      </div>
+      <Countries search={searchText}/>
     </div>
   );
 }
