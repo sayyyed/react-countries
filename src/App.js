@@ -15,7 +15,10 @@ function App() {
       <div className='header'>
         <h3 className='logo'>Countries</h3>
         <div className='search'>
-          <input type="text" ref={inputElement} onKeyPress={e => e.key === 'Enter' || e.key === 'Return' ? handleSearch() : null} className='search-input'/>
+          <div className='search-input-div'>
+            <input type="text" placeholder='Search country...' ref={inputElement} onKeyPress={e => e.key === 'Enter' || e.key === 'Return' ? handleSearch() : null} className='search-input'/>
+            <img src='search-red-icon.png' alt='search icon' className='search-icon'/>
+          </div>
           <button onClick={handleSearch} className='search-btn'>Search</button>
         </div>
       </div>

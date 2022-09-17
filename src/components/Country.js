@@ -13,6 +13,10 @@ export const Country = ({country}) => {
             <h3 className='field-data'>{country.capital}</h3>
         </div>
         <div className='field'>
+            <h3 className='label'>Population:</h3>
+            <h3 className='field-data'>{country.population}</h3>
+        </div>
+        <div className='field'>
             <img src={country.flags.png} alt={country.altSpellings[0]} className='flag' />
         </div>
         <div style={{textAlign: "center", marginTop: "20px"}}>

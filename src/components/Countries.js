@@ -17,13 +17,16 @@ export const Countries = (props) => {
     async function fetchData(req) {
         setLoading(true);
         const response = await fetch(req);
-        const data = await response.json();
+        let countries = await response.json();
         setLoading(false);
 
-        if(data.message && data.message.includes('Not Found'))
+        if(countries.message && countries.message.includes('Not Found'))
             setCountriesList([]);
         else
-            setCountriesList(data)
+        {
+            countries.sort((a, b) => a.name.common.localeCompare(b.name.common))
+            setCountriesList(countries)
+        }
     }
 
     useEffect(() => {      
